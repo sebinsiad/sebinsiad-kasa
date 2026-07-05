@@ -58,8 +58,9 @@
 
   /* ===== Form ===== */
   label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px}
-  input,select{width:100%;padding:12px 14px;border-radius:12px;font-size:16px;color:var(--text);
+  input,select{width:100%;min-width:0;max-width:100%;padding:12px 14px;border-radius:12px;font-size:16px;color:var(--text);
     background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);transition:.25s}
+  input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-height:47px;text-align:left}
   @media(min-width:641px){input,select{font-size:14px}}
   select option{background:#141a33;color:var(--text)}
   input::placeholder{color:#5b6379}
@@ -139,6 +140,7 @@
   .empty{text-align:center;color:var(--muted);padding:44px 20px;font-size:14px}
   .empty .e-ico{font-size:34px;display:block;margin-bottom:10px;opacity:.6}
   .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:16px;align-items:end}
+  .form-row>div{min-width:0}
   .charts{display:grid;grid-template-columns:1.65fr 1fr;gap:16px}
   .chart-box{position:relative;height:290px}
 
@@ -207,7 +209,8 @@
     .nav-item .ico{font-size:20px}
     .nav-item:hover{transform:none}
     .nav-item.active::before{display:none}
-    .main{margin-left:0;padding:20px 14px 96px;max-width:100%}
+    .main{margin-left:0;padding:20px 14px 96px;max-width:100%;overflow-x:hidden}
+    input[type=date]{font-size:16px;padding:12px}
     .page-title{font-size:22px}
     .stats{grid-template-columns:1fr 1fr;gap:10px}
     .stat{padding:16px;border-radius:16px}
